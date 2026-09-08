@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2026年度 週2固定制 年間日程｜まるのおうち</title>
+    <link href="https://fonts.googleapis.com/css2?family=Yomogi&family=Zen+Maru+Gothic:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0; padding: 0;
+            background-color: #F7DDE8;
+            background-image: radial-gradient(#E8C7D5 1.5px, transparent 1.5px);
+            background-size: 35px 35px;
+            font-family: 'Zen Maru Gothic', sans-serif;
+            color: #444; line-height: 1.8;
+            display: flex; justify-content: center;
+            padding: 50px 20px;
+            box-sizing: border-box;
+        }
+        .container {
+            width: 100%; max-width: 800px;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 50px 40px; border-radius: 40px;
+            box-shadow: 0 10px 30px rgba(216, 194, 168, 0.2);
+            border: 3px solid #D8C2A8;
+            box-sizing: border-box;
+        }
+        h1 {
+            font-family: 'Yomogi', cursive;
+            font-size: 2.2rem;
+            text-align: center;
+            margin-bottom: 30px;
+            color: #7A6A2F;
+        }
+        .section-box {
+            background-color: #fff;
+            border: 2px solid #F7DDE8;
+            border-radius: 30px;
+            padding: 25px 30px;
+            margin-bottom: 25px;
+            box-sizing: border-box;
+        }
+        .summary-box {
+            background: #FFFBE6;
+            border: 2px solid #F0E6A5;
+            border-radius: 20px;
+            padding: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .table-container {
+            width: 100%;
+            overflow-x: auto;
+            margin: 15px 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: #fff;
+            border-radius: 15px;
+            overflow: hidden;
+            font-size: 0.95rem;
+            table-layout: fixed;
+        }
+        
+        th, td {
+            border: 1px solid #E8C7D5;
+            padding: 10px 4px;
+            text-align: center;
+            vertical-align: middle;
+            white-space: nowrap;
+            box-sizing: border-box;
+        }
+
+        th {
+            background: #F7DDE8;
+            color: #7A6A2F;
+            font-weight: bold;
+        }
+
+        .header-course {
+            background: #E8C7D5;
+            color: #5A4A1F;
+        }
+
+        /* コース間の区切り線を強調 */
+        .border-left-course {
+            border-left: 2px solid #D8C2A8 !important;
+        }
+
+        .blue { color: #4A6FA5; font-weight: bold; }
+        .red { color: #C45A5A; font-weight: bold; }
+        
+        /* 祝日（お休み）用スタイル */
+        .holiday {
+            color: #C45A5A;
+            background-color: #FFF0F0;
+            font-weight: bold;
+            padding: 2px 6px;
+            border-radius: 4px;
+            display: inline-block;
+        }
+
+        .back-btn {
+            display: block;
+            width: fit-content;
+            padding: 12px 40px;
+            color: #7A6A2F;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 30px;
+            text-align: center;
+            margin: 30px auto 0;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            background-color: #F0E6A5;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+        .back-btn:hover { opacity: 0.8; transform: scale(1.05); }
+
+        @media (max-width: 600px) {
+            body { padding: 20px 10px; }
+            .container { padding: 30px 12px; }
+            h1 { font-size: 1.7rem; }
+            .section-box { padding: 20px 12px; }
+            th, td { padding: 8px 2px; font-size: 0.82rem; }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+
+    <h1>2026年度 週2固定制 日程</h1>
+
+    <!-- 回数調整の概要説明 -->
+    <div class="summary-box">
+        <strong style="color:#D84B81; font-size:1.1rem;">【年間授業回数・休日について】</strong>
+        <p style="margin: 8px 0; font-size:0.95rem;">
+            ・<span class="red">赤背景の日付は祝日のためお休み</span>となります。<br>
+            ・祝日休みの影響による受講回数の差をなくすため、<strong>「月・木コース」に＋3回の追加授業</strong>を行い、どちらのコースも<strong>年間合計46回</strong>に揃えています。<br>
+            ・<span class="blue">月・木コースの追加3回分の振替日につきましては、個別に保護者の方とご相談の上で決定いたします</span>（教室側で指定はいたしません）。
+        </p>
+        
+        <div class="table-container">
+            <table>
+                <colgroup>
+                    <col style="width: 28%;">
+                    <col style="width: 18%;">
+                    <col style="width: 18%;">
+                    <col style="width: 18%;">
+                    <col style="width: 18%;">
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th>コース</th>
+                        <th>通常</th>
+                        <th>祝日休</th>
+                        <th>調整</th>
+                        <th>合計</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>月・木コース</strong></td>
+                        <td>48回</td>
+                        <td><span class="red">5回</span></td>
+                        <td><span class="blue">+3回</span></td>
+                        <td><span class="blue">46回</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>火・金コース</strong></td>
+                        <td>49回</td>
+                        <td><span class="red">3回</span></td>
+                        <td>0回</td>
+                        <td><span class="blue">46回</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- 月ごとの詳細日程 -->
+    <div class="section-box">
+        <strong style="color:#4A6FA5; font-size:1.1rem; display:block; margin-bottom:5px;">📅 年間スケジュール表</strong>
+        <p style="font-size:0.85rem; color:#666; margin-top:0;">※<span class="holiday">赤色の表記</span>は祝日でお休みです。</p>
+        
+        <div class="table-container">
+            <table>
+                <colgroup>
+                    <col style="width: 16%;">
+                    <col style="width: 21%;">
+                    <col style="width: 21%;">
+                    <col style="width: 21%;">
+                    <col style="width: 21%;">
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th rowspan="2">週</th>
+                        <th colspan="2" class="header-course">月・木コース</th>
+                        <th colspan="2" class="header-course border-left-course">火・金コース</th>
+                    </tr>
+                    <tr>
+                        <th>月</th>
+                        <th>木</th>
+                        <th class="border-left-course">火</th>
+                        <th>金</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>第1週</td>
+                        <td></td>
+                        <td>10/15</td>
+                        <td class="border-left-course">10/13</td>
+                        <td>10/16</td>
+                    </tr>
+                    <tr>
+                        <td>第2週</td>
+                        <td>10/19</td>
+                        <td>10/22</td>
+                        <td class="border-left-course">10/20</td>
+                        <td>10/23</td>
+                    </tr>
+                    <tr>
+                        <td>第3週</td>
+                        <td>10/26</td>
+                        <td>10/29</td>
+                        <td class="border-left-course">10/27</td>
+                        <td>10/30</td>
+                    </tr>
+                    <tr>
+                        <td>第4週</td>
+                        <td>11/2</td>
+                        <td>11/5</td>
+                        <td class="border-left-course"><span class="holiday">11/3</span></td>
+                        <td>11/6</td>
+                    </tr>
+                    <tr>
+                        <td>第5週</td>
+                        <td>11/9</td>
+                        <td>11/12</td>
+                        <td class="border-left-course">11/10</td>
+                        <td>11/13</td>
+                    </tr>
+                    <tr>
+                        <td>第6週</td>
+                        <td>11/16</td>
+                        <td>11/19</td>
+                        <td class="border-left-course">11/17</td>
+                        <td>11/20</td>
+                    </tr>
+                    <tr>
+                        <td>第7週</td>
+                        <td><span class="holiday">11/23</span></td>
+                        <td>11/26</td>
+                        <td class="border-left-course">11/24</td>
+                        <td>11/27</td>
+                    </tr>
+                    <tr>
+                        <td>第8週</td>
+                        <td>11/30</td>
+                        <td>12/3</td>
+                        <td class="border-left-course">12/1</td>
+                        <td>12/4</td>
+                    </tr>
+                    <tr>
+                        <td>第9週</td>
+                        <td>12/7</td>
+                        <td>12/10</td>
+                        <td class="border-left-course">12/8</td>
+                        <td>12/11</td>
+                    </tr>
+                    <tr>
+                        <td>第10週</td>
+                        <td>12/14</td>
+                        <td>12/17</td>
+                        <td class="border-left-course">12/15</td>
+                        <td>12/18</td>
+                    </tr>
+                    <tr>
+                        <td>第11週</td>
+                        <td>12/21</td>
+                        <td>12/24</td>
+                        <td class="border-left-course">12/22</td>
+                        <td>12/25</td>
+                    </tr>
+                    <tr>
+                        <td>第12週</td>
+                        <td>12/28</td>
+                        <td><span class="holiday">12/31</span></td>
+                        <td class="border-left-course">12/29</td>
+                        <td><span class="holiday">1/1</span></td>
+                    </tr>
+                    <tr>
+                        <td>第13週</td>
+                        <td>1/4</td>
+                        <td>1/7</td>
+                        <td class="border-left-course">1/5</td>
+                        <td>1/8</td>
+                    </tr>
+                    <tr>
+                        <td>第14週</td>
+                        <td><span class="holiday">1/11</span></td>
+                        <td>1/14</td>
+                        <td class="border-left-course">1/12</td>
+                        <td>1/15</td>
+                    </tr>
+                    <tr>
+                        <td>第15週</td>
+                        <td>1/18</td>
+                        <td>1/21</td>
+                        <td class="border-left-course">1/19</td>
+                        <td>1/22</td>
+                    </tr>
+                    <tr>
+                        <td>第16週</td>
+                        <td>1/25</td>
+                        <td>1/28</td>
+                        <td class="border-left-course">1/26</td>
+                        <td>1/29</td>
+                    </tr>
+                    <tr>
+                        <td>第17週</td>
+                        <td>2/1</td>
+                        <td>2/4</td>
+                        <td class="border-left-course">2/2</td>
+                        <td>2/5</td>
+                    </tr>
+                    <tr>
+                        <td>第18週</td>
+                        <td>2/8</td>
+                        <td><span class="holiday">2/11</span></td>
+                        <td class="border-left-course">2/9</td>
+                        <td>2/12</td>
+                    </tr>
+                    <tr>
+                        <td>第19週</td>
+                        <td>2/15</td>
+                        <td>2/18</td>
+                        <td class="border-left-course">2/16</td>
+                        <td>2/19</td>
+                    </tr>
+                    <tr>
+                        <td>第20週</td>
+                        <td>2/22</td>
+                        <td>2/25</td>
+                        <td class="border-left-course">2/23</td>
+                        <td>2/26</td>
+                    </tr>
+                    <tr>
+                        <td>第21週</td>
+                        <td><span class="holiday">3/1</span></td>
+                        <td>3/4</td>
+                        <td class="border-left-course"><span class="holiday">3/2</span></td>
+                        <td>3/5</td>
+                    </tr>
+                    <tr>
+                        <td>第22週</td>
+                        <td>3/8</td>
+                        <td>3/11</td>
+                        <td class="border-left-course"><span class="holiday">3/9</span></td>
+                        <td>3/12</td>
+                    </tr>
+                    <tr>
+                        <td>第23週</td>
+                        <td>3/15</td>
+                        <td>3/18</td>
+                        <td class="border-left-course">3/16</td>
+                        <td>3/19</td>
+                    </tr>
+                    <tr>
+                        <td>第24週</td>
+                        <td>3/22</td>
+                        <td>3/25</td>
+                        <td class="border-left-course">3/23</td>
+                        <td>3/26</td>
+                    </tr>
+                    <tr>
+                        <td>第25週</td>
+                        <td>3/29</td>
+                        <td></td>
+                        <td class="border-left-course">3/30</td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- LINE用料金ページ（ryoukin.line.html）への戻るボタン -->
+    <a href="./ryoukin.line.html" onclick="if(history.length > 1){ history.back(); return false; }" class="back-btn">料金・利用案内へ戻る</a>
+
+</div>
+</body>
+</html>

@@ -3,394 +3,234 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>2026年度 週2固定制 年間日程｜まるのおうち</title>
+    <title>料金・利用案内｜まるのおうち</title>
+
     <link href="https://fonts.googleapis.com/css2?family=Yomogi&family=Zen+Maru+Gothic:wght@400;500;700&display=swap" rel="stylesheet">
+
     <style>
         body {
             margin: 0; padding: 0;
-            background-color: #F7DDE8;
+            background-color: #F7DDE8; 
             background-image: radial-gradient(#E8C7D5 1.5px, transparent 1.5px);
             background-size: 35px 35px;
             font-family: 'Zen Maru Gothic', sans-serif;
             color: #444; line-height: 1.8;
             display: flex; justify-content: center;
             padding: 50px 20px;
-            box-sizing: border-box;
         }
+
         .container {
             width: 100%; max-width: 800px;
             background: rgba(255, 255, 255, 0.95);
             padding: 50px 40px; border-radius: 40px;
             box-shadow: 0 10px 30px rgba(216, 194, 168, 0.2);
             border: 3px solid #D8C2A8;
-            box-sizing: border-box;
         }
-        h1 {
-            font-family: 'Yomogi', cursive;
-            font-size: 2.2rem;
-            text-align: center;
-            margin-bottom: 30px;
-            color: #7A6A2F;
-        }
+
+        h1 { font-family: 'Yomogi', cursive; font-size: 2.5rem; text-align: center; margin-bottom: 40px; color: #7A6A2F; }
+        h2 { font-family: 'Yomogi', cursive; font-size: 1.8rem; color: #D84B81; border-bottom: 2px dashed #F7DDE8; padding-bottom: 5px; margin-top: 40px; }
+
         .section-box {
-            background-color: #fff;
-            border: 2px solid #F7DDE8;
-            border-radius: 30px;
-            padding: 25px 30px;
-            margin-bottom: 25px;
-            box-sizing: border-box;
-        }
-        .summary-box {
-            background: #FFFBE6;
-            border: 2px solid #F0E6A5;
-            border-radius: 20px;
-            padding: 20px;
-            margin-bottom: 30px;
-        }
-        
-        .table-container {
-            width: 100%;
-            overflow-x: auto;
-            margin: 15px 0;
+            background-color: #fff; border: 2px solid #F7DDE8;
+            border-radius: 30px; padding: 30px; margin-bottom: 25px;
         }
 
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            background: #fff;
-            border-radius: 15px;
-            overflow: hidden;
-            font-size: 0.95rem;
-            table-layout: fixed;
-        }
-        
-        th, td {
-            border: 1px solid #E8C7D5;
-            padding: 10px 4px;
-            text-align: center;
-            vertical-align: middle;
-            white-space: nowrap;
-            box-sizing: border-box;
-        }
-
-        th {
-            background: #F7DDE8;
-            color: #7A6A2F;
-            font-weight: bold;
-        }
-
-        .header-course {
-            background: #E8C7D5;
-            color: #5A4A1F;
-        }
-
-        /* コース間の区切り線を強調 */
-        .border-left-course {
-            border-left: 2px solid #D8C2A8 !important;
-        }
-
+        .section-title { font-weight: bold; font-size: 1.2rem; color: #4A6FA5; margin-bottom: 15px; display: block; }
+        .price-text { font-size: 1.1rem; margin: 10px 0; }
         .blue { color: #4A6FA5; font-weight: bold; }
         .red { color: #C45A5A; font-weight: bold; }
-        
-        /* 祝日（お休み）用スタイル */
-        .holiday {
-            color: #C45A5A;
-            background-color: #FFF0F0;
-            font-weight: bold;
-            padding: 2px 6px;
-            border-radius: 4px;
-            display: inline-block;
+
+        table {
+            width: 100%; border-collapse: collapse; margin: 20px 0;
+            background: #fff; border-radius: 15px; overflow: hidden;
+        }
+        th, td { border: 1px solid #E8C7D5; padding: 12px; text-align: center; }
+        th { background: #F7DDE8; color: #7A6A2F; }
+
+        .bubble {
+            background: #FFF7E6; border-radius: 20px; padding: 15px 20px;
+            margin: 15px 0 30px; border: 1px solid #FFE0B2; font-size: 0.95rem;
         }
 
-        .back-btn {
+        .sodan-grid {
+            display: grid; 
+            grid-template-columns: 1fr 1fr; 
+            gap: 20px;
+        }
+
+        /* スケジュールのテキスト調整 */
+        .schedule-text {
+            word-break: keep-all;
+            overflow-wrap: normal;
+        }
+
+        /* 学校復帰サポート用案内枠 */
+        .school-support-box {
+            background: #FFFBE6;
+            border: 2px solid #F0E6A5;
+            border-radius: 25px;
+            padding: 20px 25px;
+            margin-bottom: 35px;
+            text-align: left;
+            box-sizing: border-box;
+            line-height: 1.8;
+        }
+        .school-support-title {
+            color: #D84B81;
+            font-size: 1.1rem;
             display: block;
-            width: fit-content;
-            padding: 12px 40px;
-            color: #7A6A2F;
+            margin-bottom: 8px;
+            text-align: center;
+        }
+        .school-support-btn-wrap {
+            text-align: center;
+            margin-top: 15px;
+        }
+        .school-support-link {
+            display: inline-block;
+            background: #D84B81;
+            color: #fff;
+            padding: 8px 24px;
+            border-radius: 30px;
             text-decoration: none;
             font-weight: bold;
-            border-radius: 30px;
-            text-align: center;
-            margin: 30px auto 0;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-            background-color: #F0E6A5;
+            font-size: 0.95rem;
             transition: 0.3s;
             cursor: pointer;
         }
-        .back-btn:hover { opacity: 0.8; transform: scale(1.05); }
+        .school-support-link:hover {
+            background: #B83B6C;
+            transform: translateY(-2px);
+        }
 
-        @media (max-width: 600px) {
-            body { padding: 20px 10px; }
-            .container { padding: 30px 12px; }
-            h1 { font-size: 1.7rem; }
-            .section-box { padding: 20px 12px; }
-            th, td { padding: 8px 2px; font-size: 0.82rem; }
+        @media (max-width: 600px) { 
+            .container { padding: 40px 15px; } 
+            h1 { font-size: 2rem; } 
+            .section-box { padding: 20px; }
+            .sodan-grid { grid-template-columns: 1fr; }
+            .schedule-title { font-size: 0.95rem; }
+            .schedule-text { 
+                font-size: 0.85rem; 
+                letter-spacing: -0.05em;
+                white-space: nowrap; 
+            }
         }
     </style>
 </head>
+
 <body>
+
 <div class="container">
+    <h1>料金・利用案内</h1>
 
-    <h1>2026年度 週2固定制 日程</h1>
-
-    <!-- 回数調整の概要説明 -->
-    <div class="summary-box">
-        <strong style="color:#D84B81; font-size:1.1rem;">【年間授業回数・休日について】</strong>
-        <p style="margin: 8px 0; font-size:0.95rem;">
-            ・<span class="red">赤背景の日付は祝日のためお休み</span>となります。<br>
-            ・祝日休みの影響による受講回数の差をなくすため、<strong>「月・木コース」に＋3回の追加授業</strong>を行い、どちらのコースも<strong>年間合計46回</strong>に揃えています。<br>
-            ・<span class="blue">月・木コースの追加3回分の振替日につきましては、個別に保護者の方とご相談の上で決定いたします</span>（教室側で指定はいたしません）。
-        </p>
-        
-        <div class="table-container">
-            <table>
-                <colgroup>
-                    <col style="width: 28%;">
-                    <col style="width: 18%;">
-                    <col style="width: 18%;">
-                    <col style="width: 18%;">
-                    <col style="width: 18%;">
-                </colgroup>
-                <thead>
-                    <tr>
-                        <th>コース</th>
-                        <th>通常</th>
-                        <th>祝日休</th>
-                        <th>調整</th>
-                        <th>合計</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><strong>月・木コース</strong></td>
-                        <td>48回</td>
-                        <td><span class="red">5回</span></td>
-                        <td><span class="blue">+3回</span></td>
-                        <td><span class="blue">46回</span></td>
-                    </tr>
-                    <tr>
-                        <td><strong>火・金コース</strong></td>
-                        <td>49回</td>
-                        <td><span class="red">3回</span></td>
-                        <td>0回</td>
-                        <td><span class="blue">46回</span></td>
-                    </tr>
-                </tbody>
-            </table>
+    <!-- 学校復帰サポートについての案内枠 -->
+    <div class="school-support-box">
+        <strong class="school-support-title">【午前の学び】学校復帰サポートの料金・詳細について</strong>
+        <span style="font-size: 0.95rem; color: #555;">
+            学校復帰サポート（午前の時間帯）の受講料や出張料金、詳細につきましては専用ページをご確認ください。
+        </span>
+        <div class="school-support-btn-wrap">
+            <a href="./school-support.line.html" class="school-support-link">学校復帰サポートの詳細・料金はこちら</a>
         </div>
     </div>
 
-    <!-- 月ごとの詳細日程 -->
+    <h2>授業料金</h2>
+
     <div class="section-box">
-        <strong style="color:#4A6FA5; font-size:1.1rem; display:block; margin-bottom:5px;">📅 年間スケジュール表</strong>
-        <p style="font-size:0.85rem; color:#666; margin-top:0;">※<span class="holiday">赤色の表記</span>は祝日でお休みです。</p>
+        <span class="section-title">【予約制（都度払い）】</span>
+        <p>■ 授業時間：<strong>1回 60分</strong></p>
+        <p class="price-text">■ 料金<br>
+        <strong>初回：</strong><span class="blue">2,000円</span><br>
+        <strong>2回目以降：</strong><span class="blue">2,500円</span><br>
+        <strong>2コマ連続（120分）：</strong><span class="blue">4,500円</span><br>
+        <span style="font-size: 0.9rem; color: #666;">※テスト前や苦手克服の集中学習におすすめです。</span></p>
+        <p>■ お支払い方法：<br>
+        ・PayPay（<span class="red">間違い防止のため、必ず玄関先でお顔を合わせての決済をお願いいたします。</span>お迎えの際などにお声がけください）<br>
+        ・現金（<span class="blue">お子さまが持ってきても大丈夫です</span>。おつりのないよう、封筒などに入れて<strong>必ず封をして</strong>持たせてください。）</p>    
+    </div>
+
+    <div class="section-box">
+        <span class="section-title">【週2固定制（月謝）】</span>
+        <p>■ 授業時間：<strong>1回 60分 × 週2回</strong><br>
+        <span style="font-size:0.9rem; color:#666;">※「月曜日・木曜日」または「火曜日・金曜日」のコース固定となります。</span></p>
+        <p class="price-text">■ 月謝：<span class="blue" style="font-size:1.3rem;">16,000円（税込）</span></p>
         
-        <div class="table-container">
-            <table>
-                <colgroup>
-                    <col style="width: 16%;">
-                    <col style="width: 21%;">
-                    <col style="width: 21%;">
-                    <col style="width: 21%;">
-                    <col style="width: 21%;">
-                </colgroup>
-                <thead>
-                    <tr>
-                        <th rowspan="2">週</th>
-                        <th colspan="2" class="header-course">月・木コース</th>
-                        <th colspan="2" class="header-course border-left-course">火・金コース</th>
-                    </tr>
-                    <tr>
-                        <th>月</th>
-                        <th>木</th>
-                        <th class="border-left-course">火</th>
-                        <th>金</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>第1週</td>
-                        <td></td>
-                        <td>10/15</td>
-                        <td class="border-left-course">10/13</td>
-                        <td>10/16</td>
-                    </tr>
-                    <tr>
-                        <td>第2週</td>
-                        <td>10/19</td>
-                        <td>10/22</td>
-                        <td class="border-left-course">10/20</td>
-                        <td>10/23</td>
-                    </tr>
-                    <tr>
-                        <td>第3週</td>
-                        <td>10/26</td>
-                        <td>10/29</td>
-                        <td class="border-left-course">10/27</td>
-                        <td>10/30</td>
-                    </tr>
-                    <tr>
-                        <td>第4週</td>
-                        <td>11/2</td>
-                        <td>11/5</td>
-                        <td class="border-left-course"><span class="holiday">11/3</span></td>
-                        <td>11/6</td>
-                    </tr>
-                    <tr>
-                        <td>第5週</td>
-                        <td>11/9</td>
-                        <td>11/12</td>
-                        <td class="border-left-course">11/10</td>
-                        <td>11/13</td>
-                    </tr>
-                    <tr>
-                        <td>第6週</td>
-                        <td>11/16</td>
-                        <td>11/19</td>
-                        <td class="border-left-course">11/17</td>
-                        <td>11/20</td>
-                    </tr>
-                    <tr>
-                        <td>第7週</td>
-                        <td><span class="holiday">11/23</span></td>
-                        <td>11/26</td>
-                        <td class="border-left-course">11/24</td>
-                        <td>11/27</td>
-                    </tr>
-                    <tr>
-                        <td>第8週</td>
-                        <td>11/30</td>
-                        <td>12/3</td>
-                        <td class="border-left-course">12/1</td>
-                        <td>12/4</td>
-                    </tr>
-                    <tr>
-                        <td>第9週</td>
-                        <td>12/7</td>
-                        <td>12/10</td>
-                        <td class="border-left-course">12/8</td>
-                        <td>12/11</td>
-                    </tr>
-                    <tr>
-                        <td>第10週</td>
-                        <td>12/14</td>
-                        <td>12/17</td>
-                        <td class="border-left-course">12/15</td>
-                        <td>12/18</td>
-                    </tr>
-                    <tr>
-                        <td>第11週</td>
-                        <td>12/21</td>
-                        <td>12/24</td>
-                        <td class="border-left-course">12/22</td>
-                        <td>12/25</td>
-                    </tr>
-                    <tr>
-                        <td>第12週</td>
-                        <td>12/28</td>
-                        <td><span class="holiday">12/31</span></td>
-                        <td class="border-left-course">12/29</td>
-                        <td><span class="holiday">1/1</span></td>
-                    </tr>
-                    <tr>
-                        <td>第13週</td>
-                        <td>1/4</td>
-                        <td>1/7</td>
-                        <td class="border-left-course">1/5</td>
-                        <td>1/8</td>
-                    </tr>
-                    <tr>
-                        <td>第14週</td>
-                        <td><span class="holiday">1/11</span></td>
-                        <td>1/14</td>
-                        <td class="border-left-course">1/12</td>
-                        <td>1/15</td>
-                    </tr>
-                    <tr>
-                        <td>第15週</td>
-                        <td>1/18</td>
-                        <td>1/21</td>
-                        <td class="border-left-course">1/19</td>
-                        <td>1/22</td>
-                    </tr>
-                    <tr>
-                        <td>第16週</td>
-                        <td>1/25</td>
-                        <td>1/28</td>
-                        <td class="border-left-course">1/26</td>
-                        <td>1/29</td>
-                    </tr>
-                    <tr>
-                        <td>第17週</td>
-                        <td>2/1</td>
-                        <td>2/4</td>
-                        <td class="border-left-course">2/2</td>
-                        <td>2/5</td>
-                    </tr>
-                    <tr>
-                        <td>第18週</td>
-                        <td>2/8</td>
-                        <td><span class="holiday">2/11</span></td>
-                        <td class="border-left-course">2/9</td>
-                        <td>2/12</td>
-                    </tr>
-                    <tr>
-                        <td>第19週</td>
-                        <td>2/15</td>
-                        <td>2/18</td>
-                        <td class="border-left-course">2/16</td>
-                        <td>2/19</td>
-                    </tr>
-                    <tr>
-                        <td>第20週</td>
-                        <td>2/22</td>
-                        <td>2/25</td>
-                        <td class="border-left-course">2/23</td>
-                        <td>2/26</td>
-                    </tr>
-                    <tr>
-                        <td>第21週</td>
-                        <td><span class="holiday">3/1</span></td>
-                        <td>3/4</td>
-                        <td class="border-left-course"><span class="holiday">3/2</span></td>
-                        <td>3/5</td>
-                    </tr>
-                    <tr>
-                        <td>第22週</td>
-                        <td>3/8</td>
-                        <td>3/11</td>
-                        <td class="border-left-course"><span class="holiday">3/9</span></td>
-                        <td>3/12</td>
-                    </tr>
-                    <tr>
-                        <td>第23週</td>
-                        <td>3/15</td>
-                        <td>3/18</td>
-                        <td class="border-left-course">3/16</td>
-                        <td>3/19</td>
-                    </tr>
-                    <tr>
-                        <td>第24週</td>
-                        <td>3/22</td>
-                        <td>3/25</td>
-                        <td class="border-left-course">3/23</td>
-                        <td>3/26</td>
-                    </tr>
-                    <tr>
-                        <td>第25週</td>
-                        <td>3/29</td>
-                        <td></td>
-                        <td class="border-left-course">3/30</td>
-                        <td></td>
-                    </tr>
-                </tbody>
-            </table>
+        <p style="background: #FFFBE6; padding: 15px; border-radius: 12px; font-size: 0.9rem; margin: 12px 0; border: 1px solid #FFE0B2;">
+            <strong>【定額制・回数調整について】</strong><br>
+            ・月内の週数（第5週の有無など）にかかわらず、<strong>月額一律16,000円</strong>です。<br>
+            ・祝日等の休業日により「月・木」「火・金」の年度内の合計受講回数に差が生じる場合は、特定のコースが損・得にならないよう年度内の合計回数（全46回）を揃える調整を行います。
+            
+            <!-- LINE用日程ページ（schedule2026.line.html）へのリンクボタン -->
+            <span style="display:block; text-align:center; margin-top:12px;">
+                <a href="./schedule2026.line.html" style="display:inline-block; background:#D84B81; color:#fff; padding:8px 20px; border-radius:25px; text-decoration:none; font-weight:bold; font-size:0.9rem; transition:0.3s;">
+                    📅 2026年度 週2固定制の詳しい年間日程はこちら
+                </a>
+            </span>
+        </p>
+
+        <p><span class="blue">※その月の最後の授業日までにお支払いをお願いします。</span><br>
+        <span style="font-size:0.9rem; color:#666;">（お休みされた場合は次回の来室時でも大丈夫です。）</span></p>
+        
+        <p style="margin-top: 15px;">■ お支払い方法：<br>
+        ・PayPay（<span class="red">玄関先での決済、またはご自宅からの決済が可能です。その月の最終授業日までにお願いいたします。</span>）<br>
+        ・現金（<span class="red">額が大きいため、保護者の方がお持ちください</span>）</p>
+    </div>
+
+    <h2>スケジュール</h2>
+
+    <div class="section-title" style="margin-top:20px;">予約制</div>
+    <table>
+        <tr><th>時間</th><th>月火木金（水除く）</th><th>水</th></tr>
+        <tr><td>15:30〜16:30</td><td>2枠</td><td>2枠</td></tr>
+        <tr><td>16:45〜17:45</td><td>1枠</td><td>2枠</td></tr>
+        <tr><td>18:00〜19:00</td><td>1枠</td><td>2枠</td></tr>
+        <tr><td>19:15〜20:15</td><td>2枠</td><td>2枠</td></tr>
+    </table>
+    <div class="bubble">
+        <span class="red">連続2コマまで予約可能です。</span><br>
+        お子さまのペースや宿題に合わせてご予約ください。
+    </div>
+
+    <div class="section-title">週2固定制</div>
+    <table>
+        <tr><th>時間</th><th>月・木/火・金</th></tr>
+        <tr><td>16:45〜17:45</td><td>1枠（1〜3年生）</td></tr>
+        <tr><td>18:00〜19:00</td><td>1枠（4〜6年生）</td></tr>
+    </table>
+
+    <h2>相談料金</h2>
+    <div class="sodan-grid">
+        <div class="section-box">
+            <span class="section-title">■ 初回無料相談</span>
+            <p>時間：15分<br><span class="blue">料金：無料</span></p>
+        </div>
+        <div class="section-box">
+            <span class="section-title">■ 有料相談</span>
+            <p>時間：30分<br><strong>料金：1,500円</strong></p>
         </div>
     </div>
 
-    <!-- LINE用料金ページ（ryoukin.line.html）への戻るボタン -->
-    <a href="./ryoukin.line.html" onclick="if(history.length > 1){ history.back(); return false; }" class="back-btn">料金・利用案内へ戻る</a>
+    <div class="section-box">
+        <p><strong>■ 有料相談のお支払い：</strong></p>
+        <p>【オンラインの場合】<br>
+        ・<span class="blue">事前払い</span>となります。<br>
+        ・予約後にPayPayのQRコードをお送りします。</p>
+        <p>【対面の場合】<br>
+        ・PayPay または 現金でお支払いください。</p>
+        
+        <p style="margin-top:20px;">
+            <strong class="schedule-title">■ 有料相談スケジュール（月〜金）：</strong><br>
+            <span class="schedule-text">10:00〜 / 11:00〜 / 13:00〜 / 14:00〜 / 20:45〜</span>
+        </p>
+    </div>
+
+    <div class="section-box" style="background-color:#FFF0F0; border-color:#FFDada;">
+        <span class="section-title" style="color:#C45A5A;">■ 犬アレルギーについて</span>
+        <p class="red">安全のため、犬アレルギーのあるお子さまはご利用いただけません。</p>
+        <p style="font-size:0.9rem;">犬のいる環境で症状が出る場合があり、その際の責任は負いかねます。ご了承ください。</p>
+    </div>
 
 </div>
+
 </body>
 </html>

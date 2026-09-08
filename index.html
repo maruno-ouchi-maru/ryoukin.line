@@ -103,23 +103,6 @@
             transform: translateY(-2px);
         }
 
-        /* 戻るボタン共通スタイル */
-        .back-btn {
-            display: block; width: fit-content;
-            padding: 12px 50px; color: #7A6A2F;
-            text-decoration: none; font-weight: bold; 
-            border-radius: 30px;
-            transition: 0.3s;
-            text-align: center;
-            margin: 0 auto;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-            cursor: pointer;
-        }
-        .back-btn:hover { opacity: 0.8; transform: scale(1.05); }
-
-        .btn-link { background-color: #F0E6A5; margin-top: 50px; }
-        .btn-home { background-color: #BEE1EB; margin-top: 20px; color: #4A6FA5; }
-
         @media (max-width: 600px) { 
             .container { padding: 40px 15px; } 
             h1 { font-size: 2rem; } 
@@ -131,7 +114,6 @@
                 letter-spacing: -0.05em;
                 white-space: nowrap; 
             }
-            .back-btn { width: 90%; padding: 14px 20px; }
         }
     </style>
 </head>
@@ -173,10 +155,17 @@
         <span style="font-size:0.9rem; color:#666;">※「月曜日・木曜日」または「火曜日・金曜日」のコース固定となります。</span></p>
         <p class="price-text">■ 月謝：<span class="blue" style="font-size:1.3rem;">16,000円（税込）</span></p>
         
-        <p style="background: #FFFBE6; padding: 12px 15px; border-radius: 12px; font-size: 0.9rem; margin: 12px 0; border: 1px solid #FFE0B2;">
+        <p style="background: #FFFBE6; padding: 15px; border-radius: 12px; font-size: 0.9rem; margin: 12px 0; border: 1px solid #FFE0B2;">
             <strong>【定額制・回数調整について】</strong><br>
             ・月内の週数（第5週の有無など）にかかわらず、<strong>月額一律16,000円</strong>です。<br>
-            ・祝日等の休業日により「月・木」「火・金」の年度内の合計受講回数に差が生じる場合は、特定のコースが損・得にならないよう年度内の合計回数を揃える調整を行います。
+            ・祝日等の休業日により「月・木」「火・金」の年度内の合計受講回数に差が生じる場合は、特定のコースが損・得にならないよう年度内の合計回数（全46回）を揃える調整を行います。
+            
+            <!-- LINE用日程ページ（schedule2026.line.html）へのリンクボタン -->
+            <span style="display:block; text-align:center; margin-top:12px;">
+                <a href="./schedule2026.line.html" style="display:inline-block; background:#D84B81; color:#fff; padding:8px 20px; border-radius:25px; text-decoration:none; font-weight:bold; font-size:0.9rem; transition:0.3s;">
+                    📅 2026年度 週2固定制の詳しい年間日程はこちら
+                </a>
+            </span>
         </p>
 
         <p><span class="blue">※その月の最後の授業日までにお支払いをお願いします。</span><br>

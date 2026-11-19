@@ -51,6 +51,29 @@
         th, td { border: 1px solid #E8C7D5; padding: 12px; text-align: center; }
         th { background: #F7DDE8; color: #7A6A2F; }
 
+        .summary-table {
+            margin: 10px 0 22px;
+        }
+
+        .summary-table th, .summary-table td {
+            padding: 10px 8px;
+            font-size: 0.95rem;
+        }
+
+        .summary-label {
+            font-weight: bold;
+            color: #4A6FA5;
+            font-size: 1.05rem;
+            margin-top: 18px;
+            margin-bottom: 5px;
+            display: block;
+            line-height: 1.5;
+        }
+
+        .nowrap {
+            display: inline-block;
+        }
+
         .bubble {
             background: #FFF7E6; border-radius: 20px; padding: 15px 20px;
             margin: 15px 0 30px; border: 1px solid #FFE0B2; font-size: 0.95rem;
@@ -66,7 +89,7 @@
         /* スケジュールのテキスト調整 */
         .schedule-text {
             word-break: keep-all;
-            overflow-wrap: normal;
+            overflow-wrap: break-word;
         }
 
         /* 学校復帰サポート用案内枠 */
@@ -111,15 +134,21 @@
         @media (max-width: 600px) { 
             body { padding: 20px 10px; }
             .container { padding: 30px 15px; width: calc(100% - 10px); } 
-            h1 { font-size: 2rem; } 
-            .section-box { padding: 20px 15px; }
+            h1 { font-size: 2rem; }
+            h2 { font-size: 1.55rem; }
+            .section-box { padding: 20px 14px; }
             .sodan-grid { grid-template-columns: 1fr; }
-            th, td { padding: 8px 5px; font-size: 0.85rem; }
+            th, td { padding: 8px 4px; font-size: 0.82rem; }
+            .summary-label { font-size: 0.98rem; }
+            .summary-table th, .summary-table td {
+                padding: 8px 3px;
+                font-size: 0.8rem;
+                line-height: 1.4;
+            }
             .schedule-title { font-size: 0.95rem; }
             .schedule-text { 
                 font-size: 0.85rem; 
-                letter-spacing: -0.05em;
-                white-space: nowrap; 
+                line-height: 1.7;
             }
         }
     </style>
@@ -129,6 +158,129 @@
 
 <div class="container">
     <h1>料金・利用案内</h1>
+
+    <!-- ▼ 料金一覧（早見表） ▼ -->
+    <h2>料金一覧表</h2>
+
+    <div class="section-box">
+        <p style="font-size: 0.88rem; color: #666; margin-top: 0; text-align: center; line-height: 1.6;">
+            ※料金はすべて税込です。<span class="nowrap">入会金・教材費はかかりません。</span><br>
+            詳しいルールや割引は下の各項目をご覧ください。
+        </p>
+
+        <span class="summary-label">■ 通常授業（来室）<span class="nowrap">｜予約制（都度払い）</span></span>
+        <table class="summary-table" style="margin-bottom: 10px;">
+            <tr>
+                <th>コース・時間</th>
+                <th>平日</th>
+                <th>土曜日</th>
+            </tr>
+            <tr>
+                <td><strong>初回（60分）</strong></td>
+                <td colspan="2"><span class="blue">2,000円</span></td>
+            </tr>
+            <tr>
+                <td><strong>1コマ（60分）</strong></td>
+                <td><span class="blue">2,500円</span></td>
+                <td><span class="blue">2,700円</span></td>
+            </tr>
+            <tr>
+                <td><strong>1.5コマ（90分）</strong><br><span style="font-size:0.72rem; color:#666;">※18:00開始まで・事前申請</span></td>
+                <td><span class="blue">3,500円</span><br><span style="font-size:0.72rem; color:#666;">（＋1,000円）</span></td>
+                <td><span class="blue">3,700円</span><br><span style="font-size:0.72rem; color:#666;">（＋1,000円）</span></td>
+            </tr>
+            <tr>
+                <td><strong>2コマ連続（120分）</strong></td>
+                <td><span class="blue">4,500円</span></td>
+                <td><span class="blue">4,700円</span></td>
+            </tr>
+            <tr>
+                <td><strong class="red">月間割引<br>「まるまる<ruby>８<rt style="font-size: 0.6em;">エイト</rt></ruby>」</strong></td>
+                <td colspan="2">同月内<strong>8回目</strong>の授業料が <span class="blue nowrap">1,000円</span><br><span style="font-size:0.72rem; color:#666;">（通常より1,500円お得）</span></td>
+            </tr>
+        </table>
+
+        <span class="summary-label">■ 通常授業（来室）<span class="nowrap">｜週2固定制（月謝）</span></span>
+        <table class="summary-table">
+            <tr>
+                <th>項目</th>
+                <th>内容</th>
+                <th>料金</th>
+            </tr>
+            <tr>
+                <td><strong>基本月謝</strong></td>
+                <td>1コマ60分 × 週2回</td>
+                <td><span class="blue nowrap">月額 16,000円</span><br><span style="font-size:0.72rem; color:#666;">（1コマ 2,000円）</span></td>
+            </tr>
+            <tr>
+                <td><strong>1.5コマ（90分）<br>に変更</strong><br><span style="font-size:0.72rem; color:#666;">※18:00開始まで</span></td>
+                <td>通常60分を<br>90分に延長</td>
+                <td><span class="blue nowrap">＋500円 / 回</span></td>
+            </tr>
+            <tr>
+                <td rowspan="2"><strong>追加受講</strong></td>
+                <td>同日に2コマ連続</td>
+                <td>2コマ目 <span class="blue nowrap">1,500円</span></td>
+            </tr>
+            <tr>
+                <td>別日に追加（60分）</td>
+                <td>1コマ <span class="blue nowrap">2,000円</span></td>
+            </tr>
+        </table>
+
+        <span class="summary-label">■ 学校復帰サポート<span class="nowrap">（来室・平日 10:00〜13:00）</span></span>
+        <table class="summary-table">
+            <tr>
+                <th>利用スタイル</th>
+                <th>初回</th>
+                <th>2回目以降<br><span style="font-size:0.75rem; font-weight:normal;">（60〜180分）</span></th>
+            </tr>
+            <tr>
+                <td><strong>来室</strong></td>
+                <td><span class="blue">2,000円</span></td>
+                <td><span class="blue">2,700円</span></td>
+            </tr>
+        </table>
+
+        <span class="summary-label">■ 出張まるのおうち<br><span style="font-size:0.88rem; font-weight:normal; color:#555;">（学校復帰サポート・通常授業 共通）</span></span>
+        <table class="summary-table">
+            <tr>
+                <th>距離の目安</th>
+                <th>初回</th>
+                <th>2回目以降</th>
+            </tr>
+            <tr>
+                <td><strong>車で10分以内</strong></td>
+                <td><span class="blue">2,000円</span></td>
+                <td><span class="blue">3,000円</span></td>
+            </tr>
+            <tr>
+                <td><strong>車で11分以上</strong></td>
+                <td><span class="blue">2,000円</span></td>
+                <td><span class="blue">3,500円</span></td>
+            </tr>
+        </table>
+
+        <span class="summary-label">■ ご相談</span>
+        <table class="summary-table" style="margin-bottom: 0;">
+            <tr>
+                <th>メニュー</th>
+                <th>対象・時間</th>
+                <th>料金</th>
+            </tr>
+            <tr>
+                <td><strong>初回無料相談</strong></td>
+                <td>初めての方（15分）</td>
+                <td><span class="blue">無料</span></td>
+            </tr>
+            <tr>
+                <td><strong>有料相談</strong></td>
+                <td>ご利用中の方（30分）</td>
+                <td><span class="blue">1,500円</span></td>
+            </tr>
+        </table>
+    </div>
+    <!-- ▲ 料金一覧（早見表）ここまで ▲ -->
 
     <!-- 学校復帰サポートについての案内枠 -->
     <div class="school-support-box">
@@ -148,27 +300,42 @@
 
         <!-- ▼ 都度予約の基本ルール ▼ -->
         <div style="background: #FFF7E6; padding: 15px 20px; border-radius: 15px; border: 1px solid #FFE0B2; margin-bottom: 20px; font-size: 0.95rem; line-height: 1.7;">
-            ■ 授業時間：<strong>1回 60分</strong><br>
+            ■ 授業時間：<strong>1コマ 60分</strong><br>
             ■ 予約受付：<strong>前日22:00まで</strong>（予約ボタンより受け付け）<br>
             <span style="font-size: 0.88rem; color: #555; display: block; margin-top: 4px;">
                 ※前日22:00を過ぎてから翌日のご予約をご希望の場合は、<strong class="blue">チャットにて直接お問い合わせ</strong>ください。
             </span>
         </div>
 
-        <p class="price-text">■ 料金<br>
-        <strong>初回：</strong><span class="blue">2,000円</span><br>
-        <strong>2回目以降：</strong><span class="blue">2,500円</span><br>
-        <strong>2コマ連続（120分）：</strong><span class="blue">4,500円</span><br>
-        <span style="font-size: 0.9rem; color: #666;">※テスト前や苦手克服の集中学習におすすめです。</span></p>
-        
-        <!-- ▼ 「90分授業オプション」（表現を共通化） ▼ -->
-        <div style="background: #EBF5FF; padding: 18px; border-radius: 12px; font-size: 0.9rem; margin: 15px 0; border: 1px solid #BEE1EB; line-height: 1.7;">
-            <strong class="blue" style="font-size: 1.05rem;">【90分授業オプション】</strong><br>
-            宿題が多い日、テスト直前の対策、苦手単員の復習などに、授業時間を90分へ変更できます。<br><br>
+        <p class="price-text">■ 料金（来室）<br>
+        <strong>初回（60分）：</strong><span class="blue">2,000円</span><br><br>
+        <strong>【平日（2回目以降）】</strong><br>
+        ・1コマ（60分）：<span class="blue">2,500円</span><br>
+        ・1.5コマ（90分）：<span class="blue">3,500円</span><br>
+        ・2コマ連続（120分）：<span class="blue">4,500円</span><br><br>
+        <strong>【土曜日（2回目以降）】</strong><br>
+        ・1コマ（60分）：<span class="blue">2,700円</span><br>
+        ・1.5コマ（90分）：<span class="blue">3,700円</span><br>
+        ・2コマ連続（120分）：<span class="blue">4,700円</span><br>
+        <span style="font-size: 0.9rem; color: #666; display: block; margin-top: 6px;">※テスト前や苦手克服の集中学習には1.5コマ（90分）・2コマ連続がおすすめです。</span></p>
 
-            <strong>■ 追加料金：</strong>通常料金 ＋ <span class="blue" style="font-size: 1.1rem;">1,000円 / 回</span><br>
+        <!-- ▼ 通常授業での「出張まるのおうち」案内 ▼ -->
+        <div style="background: #FFFBE6; padding: 16px 18px; border-radius: 12px; font-size: 0.9rem; margin: 15px 0; border: 1px solid #F0E6A5; line-height: 1.7;">
+            <strong style="color: #7A6A2F; font-size: 1.05rem;">🚗 【出張まるのおうち（通常授業）】</strong><br>
+            ご自宅へ伺い、マンツーマンで通常授業を行うことも可能です。<br>
+            <strong>・初回：</strong><span class="blue">2,000円</span><br>
+            <strong>・2回目以降：</strong><span class="nowrap">車で10分以内 <span class="blue">3,000円</span></span> ／ <span class="nowrap">車で11分以上 <span class="blue">3,500円</span></span><br>
+            <span style="font-size: 0.85rem; color: #666;">※学校復帰サポートでの出張と同じ料金です。ご希望の方はチャットにてご相談ください。</span>
+        </div>
+        
+        <!-- ▼ 「1.5コマ（90分）への変更」案内（表現を統一） ▼ -->
+        <div style="background: #EBF5FF; padding: 18px; border-radius: 12px; font-size: 0.9rem; margin: 15px 0; border: 1px solid #BEE1EB; line-height: 1.7;">
+            <strong class="blue" style="font-size: 1.05rem;">【1.5コマ（90分）のご利用について】</strong><br>
+            宿題が多い日、テスト直前の対策、苦手単元の復習などに、1コマ（60分）から1.5コマ（90分）へ変更できます。<br><br>
+
+            <strong>■ 追加料金：</strong>1コマ（60分）料金 ＋ <span class="blue nowrap" style="font-size: 1.1rem;">1,000円 / 回</span><br>
             <strong>■ 対象コマ：</strong>18:00開始の授業まで<br>
-            <strong>■ 申込方法：</strong>チャットにて事前申請（事前にいつでもご連絡いただけます）<br><br>
+            <strong>■ 申込方法：</strong>チャットにて事前申請<span class="nowrap">（事前にいつでもご連絡いただけます）</span><br><br>
 
             <span style="font-size: 0.85rem; color: #666; display: block;">
                 ※次の時間帯に空きがある場合のみ対応可能です（確定は前日22:00の予約締切後となります）。<br>
@@ -178,7 +345,7 @@
 
         <!-- ▼ 「まるまる８」割引案内 ▼ -->
         <p style="background: #FFFBE6; padding: 18px; border-radius: 12px; font-size: 0.9rem; margin: 15px 0; border: 1px solid #FFE0B2; line-height: 1.7;">
-            <strong class="red" style="font-size: 1.05rem; display: inline-block;">【月間割引「まるまる<ruby>８<rt style="font-size: 0.6em;">エイト</rt></ruby>」】</strong><br><br>
+            <strong class="red nowrap" style="font-size: 1.05rem;">【月間割引「まるまる<ruby>８<rt style="font-size: 0.6em;">エイト</rt></ruby>」】</strong><br><br>
             「週2ペースで通いたいけれど、お仕事や送迎の都合で曜日を固定するのが難しい」というご家庭向けに、都度予約でもお得に通える割引をご用意しています。<br><br>
 
             <strong>■ 内容：</strong><br>
@@ -199,23 +366,35 @@
 
     <div class="section-box">
         <span class="section-title">【週2固定制（月謝）】</span>
-        <p>■ 授業時間：<strong>1回 60分 × 週2回</strong><br>
+        <p>■ 授業時間：<strong>1コマ 60分 × 週2回</strong><br>
         <span style="font-size:0.9rem; color:#666;">※「月曜日・木曜日」または「火曜日・金曜日」のコース固定となります。</span></p>
-        <p class="price-text">■ 月謝：<span class="blue" style="font-size:1.3rem;">16,000円（税込）</span></p>
+        <p class="price-text">■ 月謝：<span class="blue" style="font-size:1.3rem;">16,000円（税込）</span><br>
+        <span style="font-size:0.95rem;">（1コマ60分あたり <strong class="blue">2,000円</strong>）</span></p>
         
-        <!-- ▼ 週2固定制向け「90分授業オプション」（表現を完全統一） ▼ -->
+        <!-- ▼ 週2固定制向け「1.5コマ（90分）への変更」案内（表現を統一） ▼ -->
         <div style="background: #EBF5FF; padding: 18px; border-radius: 12px; font-size: 0.9rem; margin: 15px 0; border: 1px solid #BEE1EB; line-height: 1.7;">
-            <strong class="blue" style="font-size: 1.05rem;">【90分授業オプション】</strong><br>
-            宿題が多い日、テスト直前の対策、苦手単員の復習などに、授業時間を90分へ変更できます。<br><br>
+            <strong class="blue" style="font-size: 1.05rem;">【1.5コマ（90分）への変更について】</strong><br>
+            宿題が多い日、テスト直前の対策、苦手単元の復習などに、通常1コマ（60分）の授業を1.5コマ（90分）へ変更できます。<br><br>
 
-            <strong>■ 追加料金：</strong>通常料金 ＋ <span class="blue" style="font-size: 1.1rem;">500円 / 回</span><br>
+            <strong>■ 追加料金：</strong>通常料金 ＋ <span class="blue nowrap" style="font-size: 1.1rem;">500円 / 回</span><br>
             <strong>■ 対象コマ：</strong>18:00開始の授業まで<br>
-            <strong>■ 申込方法：</strong>チャットにて事前申請（事前にいつでもご連絡いただけます）<br><br>
+            <strong>■ 申込方法：</strong>チャットにて事前申請<span class="nowrap">（事前にいつでもご連絡いただけます）</span><br><br>
 
             <span style="font-size: 0.85rem; color: #666; display: block;">
                 ※次の時間帯に空きがある場合のみ対応可能です（確定は前日22:00の予約締切後となります）。<br>
                 ※<span class="red">必ず利用できるサービスではありません</span>のでご了承ください。
             </span>
+        </div>
+
+        <!-- ▼ 週2固定制向け「追加受講」 ▼ -->
+        <div style="background: #F4FBF7; padding: 18px; border-radius: 12px; font-size: 0.9rem; margin: 15px 0; border: 1px solid #C8E6D5; line-height: 1.7;">
+            <strong style="color: #2E7D5B; font-size: 1.05rem;">【追加受講（週2固定制限定）】</strong><br>
+            テスト前や復習したい単元があるときなど、通常の授業に加えて追加で受講できます。<br><br>
+
+            <strong>■ 同日に2コマ連続で受講する場合：</strong><br>
+            → 2コマ目 <span class="blue">1,500円</span><br>
+            <strong>■ 別日に追加で受講する場合：</strong><br>
+            → 1コマ（60分） <span class="blue">2,000円</span>
         </div>
 
         <p style="background: #FFFBE6; padding: 15px; border-radius: 12px; font-size: 0.9rem; margin: 12px 0; border: 1px solid #FFE0B2;">
@@ -282,7 +461,7 @@
         
         <p style="margin-top:20px;">
             <strong class="schedule-title">■ 有料相談スケジュール（月〜金）：</strong><br>
-            <span class="schedule-text">10:00〜 / 11:00〜 / 13:00〜 / 14:00〜 / 20:45〜</span>
+            <span class="schedule-text"><span class="nowrap">10:00〜</span> / <span class="nowrap">11:00〜</span> / <span class="nowrap">13:00〜</span> / <span class="nowrap">14:00〜</span> / <span class="nowrap">20:45〜</span></span>
         </p>
     </div>
 
